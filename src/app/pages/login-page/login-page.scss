@@ -1,0 +1,114 @@
+
+:host {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  height: 100vh;            
+  
+}
+h1{
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(252, 252, 252);
+    margin-bottom: 20px;
+   
+}
+svg{
+    fill: rgb(252, 252, 252);
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    
+}
+.label-svg{
+    display: inline-flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    background: #272525;
+    width: fit-content;
+    padding: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+
+label{
+    
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(252, 252, 252);
+    text-align:left;
+}
+
+
+
+button{
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: #272525;
+    color: rgb(252, 252, 252);
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+    
+}
+
+button:hover{
+    background-color: #6b6a6a;
+}
+
+input{
+    width: 550px;
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+input:hover
+{
+    background-color: #e8e6e6;
+    ;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color:#272525;
+
+}
+
+a{
+    text-decoration: none;
+    color: rgb(252, 252, 252);
+    background-color:#272525; 
+    padding: 7px;
+    
+
+}
+a:hover
+{
+    background-color: #6b6a6a;
+    
+}
+
+p{
+    color: rgb(252, 252, 252);
+    gap: 20px;
+}
