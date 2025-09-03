@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Contact } from '../interfaces/contacto';
+import { Contact, NewContact } from '../interfaces/contacto';
 
 @Injectable({
   providedIn: 'root'
@@ -20,19 +20,14 @@ export class ContactsService {
   }
   ];
 
-  createContact(){
-    this.contactos.push({
-      id: 1,
-      firstName: 'aa',
-      lastName: 'bb',
-      address: '',
-      email: '',
-      number: '',
-      company: '',
-      isFavorite: false,
-      description: '',
-      image: ''
-    })
+  createContact(NuevoContacto: NewContact){
+     const contacto:Contact = {
+      ...NuevoContacto,
+      id: Math.random(),
+      isFavorite: false
+    }
+
+     this.contactos.push(contacto)
   }
 
   deleteContact(id:number){
