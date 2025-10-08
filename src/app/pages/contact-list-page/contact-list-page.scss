@@ -1,3 +1,90 @@
-.importante{
-    background-color: green;
+/* === Contenedor general === */
+:host {
+  display: block;
+  font-family: system-ui, sans-serif;
+  color: rgb(252, 252, 252);
+  background-color: #272525;
+  min-height: 100vh;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* === Título principal === */
+h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: rgb(252, 252, 252);
+}
+
+/* === Lista de contactos === */
+a {
+  display: block;
+  text-decoration: none;
+  background-color: #3a3a3a;
+  color: rgb(252, 252, 252);
+  padding: 15px 20px;
+  margin: 10px auto;
+  border-radius: 10px;
+  max-width: 500px;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+/* Hover con efecto sutil de brillo */
+a:hover {
+  background-color: #505050;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* === Estado vacío (sin contactos) === */
+p {
+  text-align: center;
+  font-size: 16px;
+  color: rgb(252, 252, 252);
+  margin-top: 2rem;
+}
+
+p a {
+  color: rgb(252, 252, 252);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+p a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* === Botón de nuevo contacto === */
+a{
+    text-decoration: none;
+    color: rgb(252, 252, 252);
+    background-color:#ffffff13; 
+    padding: 7px;
+    
+    
+
+}
+a:hover
+{
+    background-color: #6b6a6a;
+    
+}
+
+/* === Responsive === */
+@media (max-width: 500px) {
+  :host {
+    padding: 1rem;
+  }
+
+  a {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
 }

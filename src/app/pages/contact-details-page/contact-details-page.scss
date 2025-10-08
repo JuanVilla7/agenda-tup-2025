@@ -1,0 +1,113 @@
+/* === Estilos generales === */
+:host {
+  display: block;
+  font-family: system-ui, sans-serif;
+  color: rgb(252, 252, 252);
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #272525;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* === Estados de carga o error === */
+p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: rgb(252, 252, 252);
+}
+
+p.loading {
+  color: #b3b3b3;
+  font-style: italic;
+}
+
+p.error {
+  color: #fdfdfd;
+  font-weight: 600;
+}
+
+/* === Encabezado del contacto === */
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(252, 252, 252);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* === Favorito === */
+p.star {
+  font-size: 1.5rem;
+  color: gold;
+  margin: 0.5rem 0;
+}
+
+/* === Botones === */
+button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 15px;
+  background-color: #3a3a3a;
+  color: rgb(252, 252, 252);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #505050;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button.danger {
+  background-color: #b71c1c;
+}
+
+button.danger:hover {
+  background-color: #d32f2f;
+}
+
+/* === Enlace de edición === */
+a {
+  color: rgb(252, 252, 252);
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === Contenedor general === */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* === Responsivo === */
+@media (max-width: 500px) {
+  :host {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
