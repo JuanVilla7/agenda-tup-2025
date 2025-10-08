@@ -1,24 +1,19 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+
 import { Contact, NewContact } from '../interfaces/contacto';
+import { Auth } from './auth';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactsService {
-  contactos:Contact[] = [
-    {
-    firstName: 'Gonzalo',
-    lastName: 'Bechara',
-    address: 'San Lorenzo',
-    email: 'gbechara@austral.edu.ar',
-    number: '123456',
-    company: 'Austral',
-    id: 0,
-    isFavorite: false,
-    description: 'Hola',
-    image: ''
-  }
-  ];
+    authService = inject(Auth);
+
+
+   contactos:Contact[] = [];
+
+
 
   createContact(NuevoContacto: NewContact){
      const contacto:Contact = {
@@ -36,6 +31,18 @@ export class ContactsService {
 
   editContact(){}
 
-  getContacts(){}
+   async getContacts(){
+    const res = await fetch('https://agenda-api.somee.com/api/Contacts',
+      {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer "+this.authService.token
+        }
+      })
+      if(res.ok){
+        const resJson:Contact[] = await res.json()
+        this.contactos = resJson;
+      }
+  }
   
 }

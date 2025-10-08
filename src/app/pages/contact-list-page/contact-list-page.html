@@ -6,10 +6,10 @@
 } @empty {
 <p>No hay contactos</p>
 }
-
-<form (ngSubmit)="createContact(newContactForm.value)" #newContactForm="ngForm">
-  <div>
-    <label for="first-name">Nombre*</label>
+<div class="card">
+  <form (ngSubmit)="createContact(newContactForm.value)" #newContactForm="ngForm">
+    <div>
+      <label for="first-name">Nombre*</label>
     <input type="text" name="firstName" id="first-name" ngModel required="true" maxlength="50" #firstName="ngModel">
     @if (firstName.dirty && firstName.invalid) {
       <p class="error">El nombre es obligatorio</p>
