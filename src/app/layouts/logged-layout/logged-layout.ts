@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class LoggedLayout {
 authService = inject(Auth)
-logout() {
+showLogoutModal() {
 Swal.fire({
   title: "¿Quiere cerrar sesión?",
   icon: "warning",
@@ -21,9 +21,12 @@ Swal.fire({
   confirmButtonText: "Cerrar"
 }).then((result) => {
   if (result.isConfirmed) {
+    this.authService.logout();
     Swal.fire({
-      title: "Deleted!",
-      icon: "success"
+      icon: "success",
+      title: "Sesión cerrada",
+      showConfirmButton: false,
+      
     });
   }
 });
