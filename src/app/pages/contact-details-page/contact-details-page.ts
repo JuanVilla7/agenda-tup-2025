@@ -1,5 +1,5 @@
 import { Component, inject, input, OnInit } from '@angular/core';
-import { ContactsService } from '../../services/contact.services';
+import { ContactsService } from '../../services/contact-services';
 import { Router, RouterModule } from '@angular/router';
 import { Contact } from '../../interfaces/contacto';
 import Swal from 'sweetalert2';

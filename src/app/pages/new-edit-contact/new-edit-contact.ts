@@ -1,6 +1,6 @@
 import { Component, inject, input, OnInit, viewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { ContactsService } from '../../services/contact.services';
+import { ContactsService } from '../../services/contact-services';
 import { Router } from '@angular/router';
 import { Contact, NewContact } from '../../interfaces/contacto';
 
