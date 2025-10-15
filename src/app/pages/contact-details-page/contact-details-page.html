@@ -4,6 +4,9 @@
 } @else if(!contacto) {
   <p>No se encontró el contacto</p>
 } @else {
+  <div class="avatar">
+            @if (contacto.image) {<img [src]="contacto.image" alt="imagen">} 
+            
   <h1>{{contacto!.firstName}} {{contacto!.lastName}}</h1>
   <p>Email: {{contacto.email}}</p>
   <p>Teléfono: {{contacto.number}}</p>
@@ -17,5 +20,8 @@
     <a [routerLink]="['/contacts',idContacto(),'edit']">Editar</a>
   </p>
   <button (click)="deleteContact()">Eliminar</button>
-}
+
+
+
 </div>
+}

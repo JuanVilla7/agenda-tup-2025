@@ -1,11 +1,21 @@
-<p class="contact-item">
-     <span class="contact-info">Contacto Nº {{index() +1}} {{contacto().firstName}}
-    @if(contacto().isFavorite){
-        ⭐
-    }
-    </span>
-    <span class="contact-actions">
-    <a  [routerLink]="['/contacts',contacto().id,'edit']">Editar</a>
-    <button (click)="showDeleteModal()">Borrar</button>
-    </span>
-</p>
+<div class="contact-item">
+    <div class="contact-info">
+        <span class="contactnum">Contacto Nº {{index() +1}}</span>
+        <div class="avatar">
+            @if (contacto().image) {<img [src]="contacto().image" alt="imagen">} 
+            @else {
+                <span>{{contacto().firstName.charAt(0)}} {{contacto().lastName.charAt(0)}}</span>
+            }
+        
+        </div>
+        <span class="name">{{contacto().firstName}}</span>
+        @if(contacto().isFavorite){
+            <span class="favorite-icon">⭐</span>
+        }
+    </div>
+    
+    <div class="contact-actions">
+        <a [routerLink]="['/contacts',contacto().id]">Ver Contacto</a>
+        <button (click)="showDeleteModal()">Eliminar</button>
+    </div>
+</div>

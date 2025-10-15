@@ -2,7 +2,9 @@ import { Component, inject, input, OnInit } from '@angular/core';
 import { ContactsService } from '../../services/contact-services';
 import { Router, RouterModule } from '@angular/router';
 import { Contact } from '../../interfaces/contacto';
+import { Toast } from '../../utils/modal';
 import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-contact-details-page',
@@ -32,14 +34,38 @@ async ngOnInit() {
     if(this.contacto){
       const res = await this.contactService.setFavourite(this.contacto.id);
       if(res) this.contacto.isFavorite = !this.contacto.isFavorite;
+        Toast.fire({
+          icon: 'success',
+          title: this.contacto.isFavorite ? 'Añadido a favoritos' : 'Eliminado de favoritos'
+        });
+      }
+      
     }
-  }
+  
 
-  async deleteContact(){
-    if(this.contacto){
+ async deleteContact() {
+  if (this.contacto) {
+    const result = await Swal.fire({
+      title: "Seguro que deseas eliminar este contacto?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Borrar definitivamente",
+      cancelButtonText: "Cancelar"
+    });
+
+    if (result.isConfirmed) {
       const res = await this.contactService.deleteContact(this.contacto.id);
-      if(res) this.router.navigate(['/']);
+      if (res) {
+        await Swal.fire({
+          title: "Contacto eliminado",
+          text: "Tu contacto ha sido eliminado correctamente",
+          icon: "success"
+        });
+        this.router.navigate(['/']);
+      }
     }
   }
 }
-
+}

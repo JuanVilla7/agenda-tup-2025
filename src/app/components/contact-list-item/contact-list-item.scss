@@ -1,48 +1,93 @@
-.contact-item{
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    color: #f0f0f0;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family:  Arial, sans-serif;
+  background-color: #2a2a2e;
+  color: #e1e1e1;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  transition: all 0.2s ease-in-out;
 }
 
-.contact-info{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    
+.contact-item:hover {
+  border-color: #555;
 }
 
-.contact-actions{
-    margin-left: auto;
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contactnum {
+  color: #888;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.favorite-icon {
+  font-size: 18px;
+}
+
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-actions a,
+.contact-actions button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact-actions a {
+  background-color: #3f3f46;
+  color: #e1e1e1;
+}
+
+.contact-actions a:hover {
+  background-color: #52525b;
+}
+
+.contact-actions button {
+  background-color: #b91c1c;
+  color: #fff;
+}
+
+.contact-actions button:hover {
+  background-color: #dc2626;
+}
+
+  .avatar{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    gap: 15px;
-}
-.contact-actions :hover{
-    cursor: pointer;
-    
-}
-.contact-item button{
-    background: none;
-    border: none;
-    color: #f0f0f0;
-    font-size: 16px;
-    cursor: pointer;
-}
-.contact-actions a{
-    color: #f0f0f0;
-    text-decoration: none;
-}
-.contact-actions a:hover{
-    text-decoration: underline;
-}
-.contact-actions button:hover{
-    text-decoration: underline;
-}
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    object-fit: cover;
+    img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  object-fit: cover;
+  }
+    }
